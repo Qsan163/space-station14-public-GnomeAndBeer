@@ -1,4 +1,4 @@
-- type: entity 
+- type: entity #Я запрещаю гномам использовать магию . Никакого РДМа впредь .
   name: Gnome 
   parent:     
   - BaseSimpleMob
@@ -27,6 +27,7 @@
         layer:
         - SmallMobLayer
   - type: Stripping
+  - type: Strippable
   - type: RandomMetadata
     nameSegments:
       - names_gnome_first
@@ -45,9 +46,6 @@
     rules: ghost-role-information-gnome-rules
   - type: GhostTakeoverAvailable
   - type: Flashable
-  - type: AutoImplant
-    implants:
-    - BeerImplantGnome
   - type: Tag
     tags:
     - CannotSuicide
@@ -117,6 +115,10 @@
       types:
         Blunt: 60  
   - type: ZombieImmune   
+  - type: MobStateActions
+    actions:
+      Alive:
+      - ActionBeersleep
   - type: Damageable
     damageContainer: StructuralInorganic
   - type: CanEscapeInventory

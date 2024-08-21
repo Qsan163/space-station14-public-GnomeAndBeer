@@ -26,7 +26,7 @@
     rules: ghost-role-information-gnome-rules
   - type: AutoImplant
     implants:
-    - BeerImplantGnome
+    - BeerImplantGnome #Костыль разкостылен , импланты больше не вытаскиваются
     - BeerImplantClowned
     - BeerImplantGnomes
     - BeerImplantSmoke

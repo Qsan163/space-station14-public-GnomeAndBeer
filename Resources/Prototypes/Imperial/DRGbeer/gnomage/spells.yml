@@ -51,6 +51,7 @@
   noSpawn: true
   components:
     - type: SubdermalImplant
+      permanent: true
       implantAction: ActionBeerClowned    
     - type: Tag
       tags:
@@ -85,6 +86,7 @@
   noSpawn: true
   components:
     - type: SubdermalImplant
+      permanent: true
       implantAction: ActionBeerGnomespawn   
     - type: Tag
       tags:
@@ -119,6 +121,7 @@
   noSpawn: true
   components:
     - type: SubdermalImplant
+      permanent: true
       implantAction: ActionBeerSmoke 
     - type: Tag
       tags:
