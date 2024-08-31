@@ -115,10 +115,6 @@
       types:
         Blunt: 60  
   - type: ZombieImmune   
-  - type: MobStateActions
-    actions:
-      Alive:
-      - ActionBeersleep
   - type: Damageable
     damageContainer: StructuralInorganic
   - type: CanEscapeInventory
