@@ -27,7 +27,6 @@
         layer:
         - SmallMobLayer
   - type: Stripping
-  - type: Strippable
   - type: RandomMetadata
     nameSegments:
       - names_gnome_first
