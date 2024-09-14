@@ -1,0 +1,269 @@
+- type: entity
+  name: passenger ID card
+  parent: IDCardStandard
+  id: WizardIDCard
+  suffix: Wizard
+  components:
+  - type: PresetIdCard
+    job: Passenger
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+  - type: Sprite
+    sprite: Imperial/wizardry/id.rsi
+    state: default
+  - type: AgentIDCard
+    icons:
+    - JobIconUnknown
+  - type: ActivatableUI
+    key: enum.AgentIDCardUiKey.Key
+    inHandsOnly: true
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: UserInterface
+    interfaces:
+      - key: enum.AgentIDCardUiKey.Key
+        type: AgentIDCardBoundUserInterface
+      - key: enum.ChameleonUiKey.Key
+        type: ChameleonBoundUserInterface
+
+#Робы визарда
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardBlack2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/black.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/black.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardBlue2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/blue.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/blue.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardGreen2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/green.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/green.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardPurple2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/people.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/people.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardRed2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/red.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/red.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardWhite2
+  name: White wizard robe
+  description: Magic time
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/robes/white.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/robes/white.rsi
+
+#Шлёпы визарда
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizBlack2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-black.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-black.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizBlue2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-blue.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-blue.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizGreen2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-green.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-green.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizPurple2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-pepr.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-pepr.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizRed2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-red.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-red.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizWhite2
+  name: White wizard hat
+  description: Magic hat
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hats/hat-white.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hats/hat-white.rsi
+
+#обувь , ТАПОТЧКИ и униформа
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesWiztapki
+  name: TAPKI MAGA
+  description: recept blinchikov
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/shoes/tapki.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/shoes/tapki.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformWizard
+  name: death squad uniform
+  description: Advanced armored jumpsuit used by special forces in special operations.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/Uniform.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/Uniform.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesWizSandal
+  name: Wizard sandals
+  description: really not magical
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/shoes/sandals.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/shoes/sandals.rsi
+
+#капюшоны (для учеников)
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizBlack2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-blk.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-blk.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizBlue2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-blu.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-blu.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizGreen2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-grn.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-grn.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizPurple2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-prp.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-prp.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizRed2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-red.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-red.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHodWizWhite2
+  name: Black wizard hood
+  description: Magical hood.
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/hood/hood-wht.rsi
+  - type: Clothing
+    sprite: Imperial/wizardry/hood/hood-wht.rsi

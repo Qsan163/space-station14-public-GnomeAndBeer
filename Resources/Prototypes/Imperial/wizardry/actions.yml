@@ -1,0 +1,140 @@
+- type: entity
+  id: ActionFireballWizard
+  name: Fireball
+  description: Fires an explosive fireball towards the clicked location.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 6
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/fireball.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+    event: !type:ProjectileSpellEvent
+      prototype:   ProjectileFireballWizard
+      posData: !type:TargetCasterPos
+      speech: action-speech-spell-fireball
+  - type: ActionUpgrade
+    effectedLevels:
+      2: ActionFireballII
+
+- type: entity
+  id: ActionTeslaWizard
+  name: lightning blast
+  description: Fires an tesla ball towards the clicked location.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/fireball.ogg
+    icon:
+      sprite: Structures/Power/Generation/Tesla/energy_miniball.rsi
+      state: tesla_projectile
+    event: !type:ProjectileSpellEvent
+      prototype:   TeslaWizardBullet
+      posData: !type:TargetCasterPos
+      speech: P'WAH, UNLIM'TED P'WAH
+
+#снизу прототипы для эфирного прыжка
+
+- type: polymorph
+  id: AshJaunt
+  configuration:
+    entity: PolymorphAshJaunt
+    forced: true
+    duration: 5
+
+- type: entity
+  id: PolymorphAshJauntAnimation
+  name: ashen thing
+  description: you're not really supposed to read this
+  noSpawn: true
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Imperial/wizardry/polymorphs.rsi
+    state: ash_jaunt
+    loop: false
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  id: PolymorphAshJauntEndAnimation
+  name: ashen thing
+  description: you're not really supposed to read this
+  noSpawn: true
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Imperial/wizardry/polymorphs.rsi
+    state: ash_jaunt_end
+    loop: false
+  - type: TimedDespawn
+    lifetime: 1
+
+- type: entity
+  id: PolymorphAshJaunt
+  name: ashen thing
+  description: again you're not supposed to read this
+  noSpawn: true
+  components:
+  - type: MindContainer
+  - type: InputMover
+  - type: MobMover
+  - type: Input
+    context: "ghost"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 80
+        mask:
+        - GhostImpassable
+  - type: MovementIgnoreGravity
+  - type: Actions
+  - type: NoSlip
+  - type: Eye
+    drawFov: false
+    visMask:
+      - Normal
+      - Ghost
+  - type: ContentEye
+    maxZoom: 1.2, 1.2
+  - type: DoAfter
+  - type: Alerts
+
+#архивируем до худших времен (когда я разберусь в украденном коде)
+
+- type: entity
+  id: ActionShapeshiftWizard
+  name: Ashen Passage
+  description: A short range spell that allows you to pass unimpeded through walls.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 15
+    itemIconStyle: NoItem
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: gib
+    event: !type:EventHereticAshenShift
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-jaunt
+
+      

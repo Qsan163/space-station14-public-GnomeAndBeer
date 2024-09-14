@@ -1,0 +1,79 @@
+- type: storePreset
+  id: WizardUplinkPreset
+  storeName: ErtUplinkFull
+  categories:
+  - WizardSpellsOffensive
+  currencyWhitelist:
+  - Mana
+
+- type: storeCategory
+  id: WizardSpellsOffensive
+  name: store-category-wizard-offensive
+
+- type: entity
+  parent: BaseItem
+  id: BaseWizardUplink
+  name: syndicate uplink
+  description: Suspiciously looking old radio...
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Imperial/wizardry/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: WizardUplinkPreset
+    balance:
+      Mana: 25
+
+#товары аплинка
+
+#атакующие заклинания
+
+- type: listing
+  id: WizardUplinkFireball
+  name: wizard-uplink-fireball-name
+  description: wizard-uplink-fireball-desc
+  productAction: ActionFireballWizard
+  cost:
+    Mana: 2
+  categories:
+  - WizardSpellsOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: WizardUplinkTesla
+  name: wizard-uplink-tesla-name
+  description: wizard-uplink-tesla-desc
+  productAction: ActionTeslaWizard
+  cost:
+    Mana: 1
+  categories:
+  - WizardSpellsOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: WizardUplinkShapeshift
+  name: wizard-uplink-shapeshift-name
+  description: wizard-uplink-shapeshift-desc
+  productAction: ActionShapeshiftWizard
+  cost:
+    Mana: 1
+  categories:
+  - WizardSpellsOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

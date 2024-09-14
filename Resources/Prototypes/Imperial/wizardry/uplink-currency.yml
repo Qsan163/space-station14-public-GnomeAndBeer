@@ -1,0 +1,44 @@
+- type: entity
+  name: blue space cube
+  parent: BaseItem
+  id: ManaCrystal
+  suffix: 20 mana
+  description: Small cube of solid blue space matter
+  components:
+  - type: Sprite
+    sprite: Imperial/wizardry/manacrystal.rsi
+    netsync: false
+    state: bluespacecube
+  - type: Item
+    sprite: Imperial/wizardry/manacrystal.rsi
+  - type: Stack
+    count: 20
+    stackType: Mana
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      Mana: 1
+
+- type: currency
+  id: Mana
+  displayName: MAHA
+  cash:
+    1: manacrystal1
+  canWithdraw: true
+
+- type: stack
+  id: Mana
+  name: manacrystal
+  icon: Objects/Specific/Ert/bluespacecube.rsi
+  spawn: manacrystal1
+
+- type: entity
+  parent: ManaCrystal
+  id: manacrystal1
+  suffix: 1 mana
+  components:
+  - type: Stack
+    count: 1
