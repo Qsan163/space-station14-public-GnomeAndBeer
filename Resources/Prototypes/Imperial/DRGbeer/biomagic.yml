@@ -26,6 +26,7 @@
   noSpawn: true
   components:
     - type: SubdermalImplant
+      permanent: true
       implantAction: ActionBeersleep      
     - type: Tag
       tags:
