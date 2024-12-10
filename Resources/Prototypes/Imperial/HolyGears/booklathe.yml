@@ -1,0 +1,239 @@
+- type: entity
+  parent: BaseLathe
+  id: PrinterBibleImperial
+  name: Document Printer
+  description: Bureaucratic perfection. Stores a database of all Nanotrasen documents, and lets you print them as long as you have paper.
+  components:
+    - type: Sprite
+      sprite: Imperial/HolyGears/archive.rsi
+      snapCardinals: true
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Lathe
+      producingSound: /Audio/Machines/printer.ogg
+      idleState: icon
+      runningState: building
+      staticRecipes:
+        - BibleTomeRecipe
+        - BibleLightRecipe
+        - BibleClownRecipe
+        - BibleNecronomiconHolyRecipe
+        - BibleKoranRecipe
+        - BibleKojikiRecipe
+        - BibleWhiteRecipe
+        - BiblegurugranthsahibRecipe
+        - BibleBananaRecipe
+        - BibleMormonRecipe
+        - BibleKingYellowRecipe
+        - BibleMeltedRecipe
+        - BibleburningRecipe
+        - BibleIthaguaRecipe
+        - BibleScientologyRecipe
+        - BibleScrapbookRecipe
+        - BibleSyndicateRecipe
+        - BibleInsultRecipe
+        - BibleAtheistRecipe
+        - BibleCreeperRecipe
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.10,-0.10, 0.10, 0.10"
+          density: 10
+          mask:
+            - TabletopMachineMask
+          layer:
+            - TabletopMachineLayer
+    - type: MaterialStorage
+      whitelist:
+        tags:
+          - Paper
+      storage:
+        Paper: 0
+
+- type: latheRecipe
+  id: BibleTomeRecipe
+  result: BibleTome
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleLightRecipe
+  result: BibleLight
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleClownRecipe
+  result: BibleClown
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleNecronomiconHolyRecipe
+  result: BibleNecronomiconHoly
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleKoranRecipe
+  result: BibleKoran
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleKojikiRecipe
+  result: BibleKojiki
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleWhiteRecipe
+  result: BibleWhite
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BiblegurugranthsahibRecipe
+  result: Biblegurugranthsahib
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleBananaRecipe
+  result: BibleBanana
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleMormonRecipe
+  result: BibleMormon
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleKingYellowRecipe
+  result: BibleKingYellow
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleMeltedRecipe
+  result: BibleMelted
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleburningRecipe
+  result: Bibleburning
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleIthaguaRecipe
+  result: BibleIthagua
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleScientologyRecipe
+  result: BibleScientology
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleScrapbookRecipe
+  result: BibleScrapbook
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleSyndicateRecipe
+  result: BibleSyndicate
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleInsultRecipe
+  result: BibleInsult
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleAtheistRecipe
+  result: BibleAtheist
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500
+
+- type: latheRecipe
+  id: BibleCreeperRecipe
+  result: BibleCreeper
+  category: Service
+  completeTime: 7
+  applyMaterialDiscount: false
+  materials:
+    Paper: 2500

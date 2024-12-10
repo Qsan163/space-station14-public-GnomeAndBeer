@@ -1,0 +1,26 @@
+- type: entity
+  id: BeaconChaplainArmor
+  name: Chaplain ornaments beacon
+  description: This is where your favorite thief's supplies lie. Try to remember which ones.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/crate.rsi
+    state: icon
+  - type: HolyCrate
+    transformAfterSelect: AlwaysPoweredWallLight
+    possibleSets:
+    - KitHolyArmorBase
+    - KitHolyArmorArcher
+    - KitHolyArmorWitch
+    - KitHolyArmorRatvar
+    - KitHolyArmorStone
+    - KitHolyArmorLeader
+    - KitHolyArmorAcolyte
+    - KitHolyArmorProfane
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      - key: enum.ThiefBackpackUIKey.Key
+        type: ThiefBackpackBoundUserInterface

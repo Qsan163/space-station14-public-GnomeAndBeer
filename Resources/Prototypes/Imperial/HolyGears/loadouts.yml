@@ -1,0 +1,172 @@
+- type: startingGear
+  id: MitropoliteGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomFormal
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCentComCap
+    eyes: ClothingCentComGlassesGreen
+    gloves: ClothingHandsGlovesCentCom 
+    outerClothing: ClothingOuterArmorCentCom 
+    neck: ClothingNeckCloakTsarGreen
+    back: ClothingBackpackSatchelLeather
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: Bible
+    pocket1: BoxFolderBlack
+    pocket2: PenCentcom
+
+- type: startingGear
+  id: HolyAgentGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHelmetERTHoly
+    eyes: ClothingCentComGlassesGreen
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingBackpackSatchelLeather
+    outerClothing: ClothingOuterArmorSlimHolyERT
+    suitstorage: WeaponHolyMusket
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: Bible
+    pocket1: BoxFolderBlack
+    pocket2: PenCentcom
+
+- type: startingGear
+  id: ERTCallHolyGearEVA
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    back: ClothingBackpackCallERTSecurityFilled
+    shoes: ClothingShoesBootsJack
+    mask: ClothingMaskGasERT
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    suitstorage: SpearMilitaryHoly
+    outerClothing: ClothingOuterHardsuitERTHoly
+    lefthand: OxygenTankFilled
+    id: ERTSecurityPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityWebbing
+    pocket1: ERTUplinkSecurity
+    pocket2: Bible
+
+#пресеты
+
+- type: entity
+  noSpawn: false
+  parent: MobHuman
+  id: MitropolitePreset
+  name: mitropolit
+  components:
+    - type: RandomMetadata
+      nameSegments:
+      - title_mitropolite
+      - names_last
+    - type: BibleUser
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+    - type: Loadout
+      prototypes: [ MitropoliteGear ]
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+
+- type: entity
+  noSpawn: false
+  parent: MobHuman
+  id: HolyAgentPreset
+  name: lookout
+  components:
+    - type: RandomMetadata
+      nameSegments:
+      - title_agent
+      - names_last
+    - type: BibleUser
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+    - type: Loadout
+      prototypes: [ HolyAgentGear ]
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+
+- type: entity
+  noSpawn: false
+  parent: MobHuman
+  id: InquisitorPreset
+  name: inquisitor
+  components:
+    - type: RandomMetadata
+      nameSegments:
+      - title_inquisitor
+      - names_last
+    - type: BibleUser
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+    - type: Loadout
+      prototypes: [ ERTCallHolyGearEVA ]
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+
+#гост-роли
+
+- type: entity
+  #noSpawn: true
+  id: SpawnERTMitropolitPreset
+  name: ghost role spawn point
+  parent: MarkerBase
+  components:
+    - type: GhostRole
+      name: ertcall-mitro-eva-name
+      description: ertcall-mitro-eva-desc
+      rules: ertcall-mitro-eva-rules
+    - type: GhostRoleMobSpawner
+      prototype: MitropolitePreset
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      layers:
+        - state: green
+        - sprite: Markers/jobs.rsi
+          state: ertmedicaleva
+
+- type: entity
+  #noSpawn: true
+  id: SpawnERTlookoutPreset
+  name: ghost role spawn point
+  parent: MarkerBase
+  components:
+    - type: GhostRole
+      name: ertcall-agent-eva-name
+      description: ertcall-agent-eva-desc
+      rules: ertcall-agent-eva-rules
+    - type: GhostRoleMobSpawner
+      prototype: HolyAgentPreset
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      layers:
+        - state: green
+        - sprite: Markers/jobs.rsi
+          state: ertmedicaleva
+
+- type: entity
+  #noSpawn: true
+  id: SpawnERTinquisitorPreset
+  name: ghost role spawn point
+  parent: MarkerBase
+  components:
+    - type: GhostRole
+      name: ertcall-inquisitor-eva-name
+      description: ertcall-inquisitor-eva-desc
+      rules: ertcall-inquisitor-eva-rules
+    - type: GhostRoleMobSpawner
+      prototype: InquisitorPreset
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      layers:
+        - state: green
+        - sprite: Markers/jobs.rsi
+          state: ertmedicaleva

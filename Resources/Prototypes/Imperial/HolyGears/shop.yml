@@ -1,0 +1,427 @@
+- type: entity
+  name: blue space cube
+  parent: BaseItem
+  id: NTCoins
+  suffix: 20 NTC
+  description: Small cube of solid blue space matter
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/coin.rsi
+    netsync: false
+    state: icon
+  - type: Item
+    sprite: Imperial/HolyGears/coin.rsi
+  - type: Stack
+    count: 20
+    stackType: NTCoins
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      NTCoins: 1
+
+- type: currency
+  id: NTCoins
+  displayName: store-currency-display-ntc
+  cash:
+    1: NTCoins1
+  canWithdraw: true
+
+- type: stack
+  id: NTCoins
+  name: NTCoins
+  icon: Imperial/HolyGears/coin.rsi
+  spawn: NTCoins1
+
+- type: entity
+  parent: NTCoins
+  id: NTCoins1
+  suffix: 1 NTC
+  components:
+  - type: Stack
+    count: 1
+
+- type: vendingMachineInventory
+  id: ImperialChapVendInventory
+  startingInventory:
+    HolyWeaponNullrod: 1
+    HolyWeaponStaffBlue: 1
+    HolyWeaponStaffRed: 1
+    HolyWeaponSwordBase: 1
+    HolyWeaponSwordKatana: 1
+    HolyWeaponSwordDarkmore: 1
+    HolyWeaponSwordPower: 1
+    HolyWeaponEswordBase: 1
+    HolyWeaponEswordPirate: 1
+    HolyWeaponHFBbase: 1
+    HolyWeaponHFBSpellblade: 1
+    HolyWeaponHFBTalking: 1
+    HolyWeaponSord: 1
+    HolyWeaponHammer: 1
+    HolyWeaponSmallHonki: 1
+    HolyWeaponSmallHyper: 1
+    HolyWeaponFedora: 1
+    HolyWeaponWhip: 1
+    HolyWeaponStaffFork: 1
+    HolyWeaponPlushCarp: 1
+    HolyWeaponRatvarSpear: 1
+    HolyWeaponPharaoh: 1
+    WeaponHolyMusket: 1
+
+- type: entity
+  parent: VendingMachine
+  id: BaseERTUplinkHoly
+  name: ert uplink
+  description: super ert uplink
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/chapdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: UserInterface
+    interfaces:
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: VendingMachine
+    pack: ImperialChapVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Store
+    preset: HolyWeaponUplinkPreset
+    balance:
+      NTCoins: 1
+
+- type: storePreset
+  id: HolyWeaponUplinkPreset
+  storeName: ErtUplinkFull
+  categories:
+  - HolyUplinksrd1
+  - HolyUplinksrd2
+  - HolyUplinkSmall
+  - HolyUplinkPerm
+  - HolyUplinkspr
+  - HolyUplinkothr
+  currencyWhitelist:
+  - NTCoins
+
+#категория 1
+- type: storeCategory
+  id: HolyUplinkSmall
+  name: store-category-holy-melee-small
+
+- type: listing
+  id: HolyUplinkNullrod
+  name: holy-uplink-nullrod-name
+  description: holy-uplink-nullrod-desc
+  productEntity: HolyWeaponNullrod
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+- type: listing
+  id: HolyUplinkClowndagger
+  name: holy-uplink-Clowndagger-name
+  description: holy-uplink-Clowndagger-desc
+  productEntity: HolyWeaponSmallHonki
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+- type: listing
+  id: HolyUplinkhypertool
+  name: holy-uplink-hypertool-name
+  description: holy-uplink-hypertool-desc
+  productEntity: HolyWeaponSmallHyper
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+- type: listing
+  id: HolyUplinkFedora
+  name: holy-uplink-fedora-name
+  description: holy-uplink-fedora-desc
+  productEntity: HolyWeaponFedora
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+- type: listing
+  id: HolyUplinkCarp
+  name: holy-uplink-carp-name
+  description: holy-uplink-carp-desc
+  productEntity: HolyWeaponPlushCarp
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+- type: listing
+  id: HolyUplinkSord
+  name: holy-uplink-sord-name
+  description: holy-uplink-sord-desc
+  productEntity: HolyWeaponSord
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkSmall
+
+#категория 2 
+- type: storeCategory
+  id: HolyUplinkPerm
+  name: store-category-holy-melee-permanent
+
+- type: listing
+  id: HolyUplinkgodhand
+  name: holy-uplink-godhand-name
+  description: holy-uplink-godhand-desc
+  productEntity: HolyWeaponHandGod
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkPerm
+
+- type: listing
+  id: HolyUplinkchainsaw
+  name: holy-uplink-chainsaw-name
+  description: holy-uplink-chainsaw-desc
+  productEntity: HolyWeaponHandChainsaw
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkPerm
+
+- type: listing
+  id: HolyUplinkunholybless
+  name: holy-uplink-unholybless-name
+  description: holy-uplink-unholybless-desc
+  productEntity: HolyWeaponHandUnholy
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkPerm
+
+- type: listing
+  id: HolyUplinkdarkbless
+  name: holy-uplink-darkbless-name
+  description: holy-uplink-darkbless-desc
+  productEntity: HolyWeaponHandDark
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkPerm
+
+#категория 3
+- type: storeCategory
+  id: HolyUplinksrd1
+  name: store-category-holy-melee-swords1
+
+- type: listing
+  id: HolyUplinkswordbase
+  name: holy-uplink-swordbase-name
+  description: holy-uplink-swordbase-desc
+  productEntity: HolyWeaponSwordBase
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+- type: listing
+  id: HolyUplinkswordkatana
+  name: holy-uplink-swordkatana-name
+  description: holy-uplink-swordkatana-desc
+  productEntity: HolyWeaponSwordKatana
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+- type: listing
+  id: HolyUplinkswordDarkmore
+  name: holy-uplink-swordDarkmore-name
+  description: holy-uplink-swordDarkmore-desc
+  productEntity: HolyWeaponSwordDarkmore
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+- type: listing
+  id: HolyUplinkswordPower
+  name: holy-uplink-swordPower-name
+  description: holy-uplink-swordPower-desc
+  productEntity: HolyWeaponSwordPower
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+- type: listing
+  id: HolyUplinkEswordBase
+  name: holy-uplink-EswordBase-name
+  description: holy-uplink-EswordBase-desc
+  productEntity: HolyWeaponEswordBase
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+- type: listing
+  id: HolyUplinkEswordPirate
+  name: holy-uplink-EswordPirate-name
+  description: holy-uplink-EswordPirate-desc
+  productEntity: HolyWeaponEswordPirate
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd1
+
+#категория 4
+- type: storeCategory
+  id: HolyUplinksrd2
+  name: store-category-holy-melee-swords2
+
+- type: listing
+  id: HolyUplinkHFBbase
+  name: holy-uplink-HFBbase-name
+  description: holy-uplink-HFBbase-desc
+  productEntity: HolyWeaponHFBbase
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd2
+
+- type: listing
+  id: HolyUplinkHFBSpellblade
+  name: holy-uplink-HFBSpellblade-name
+  description: holy-uplink-HFBSpellblade-desc
+  productEntity: HolyWeaponHFBSpellblade
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd2
+
+- type: listing
+  id: HolyUplinkHFBTalking
+  name: holy-uplink-HFBTalking-name
+  description: holy-uplink-HFBTalking-desc
+  productEntity: HolyWeaponHFBTalking
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinksrd2
+
+#категория 5
+- type: storeCategory
+  id: HolyUplinkspr
+  name: store-category-holy-melee-spears
+
+- type: listing
+  id: HolyUplinkStaffBlue
+  name: holy-uplink-StaffBlue-name
+  description: holy-uplink-StaffBlue-desc
+  productEntity: HolyWeaponStaffBlue
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkspr
+
+- type: listing
+  id: HolyUplinkStaffRed
+  name: holy-uplink-StaffRed-name
+  description: holy-uplink-StaffRed-desc
+  productEntity: HolyWeaponStaffRed
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkspr
+
+- type: listing
+  id: HolyUplinkRatvarSpear
+  name: holy-uplink-RatvarSpear-name
+  description: holy-uplink-RatvarSpear-desc
+  productEntity: HolyWeaponRatvarSpear
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkspr
+
+- type: listing
+  id: HolyUplinkStaffFork
+  name: holy-uplink-StaffFork-name
+  description: holy-uplink-StaffFork-desc
+  productEntity: HolyWeaponStaffFork
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkspr
+
+- type: listing
+  id: HolyUplinkPharaoh
+  name: holy-uplink-Pharaoh-name
+  description: holy-uplink-Pharaoh-desc
+  productEntity: HolyWeaponPharaoh
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkspr
+
+#категория 6
+- type: storeCategory
+  id: HolyUplinkothr
+  name: store-category-holy-othr
+
+- type: listing
+  id: HolyUplinkHammer
+  name: holy-uplink-Hammer-name
+  description: holy-uplink-Hammer-desc
+  productEntity: HolyWeaponHammer
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkothr
+
+- type: listing
+  id: HolyUplinkWhip
+  name: holy-uplink-Whip-name
+  description: holy-uplink-Whip-desc
+  productEntity: HolyWeaponWhip
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkothr
+
+- type: listing
+  id: HolyUplinkPrideHammer
+  name: holy-uplink-PrideHammer-name
+  description: holy-uplink-PrideHammer-desc
+  productEntity: HolyWeaponPrideHammer
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkothr
+
+- type: listing
+  id: HolyUplinkBowHoly
+  name: holy-uplink-BowHoly-name
+  description: holy-uplink-BowHoly-desc
+  productEntity: BoxHolyBow
+  cost:
+    NTCoins: 1
+  categories:
+  - HolyUplinkothr

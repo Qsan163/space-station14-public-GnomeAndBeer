@@ -1,0 +1,222 @@
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleNecronomiconHoly
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chapel/necronomicon.rsi
+  - type: Item
+    sprite: Objects/Specific/Chapel/necronomicon.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleAtheist
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/atheist.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/atheist.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleBanana
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/banana.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/banana.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleMormon
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/mormon.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/mormon.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: Bibleburning
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/burning.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/burning.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleClown
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/clown.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/clown.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleCreeper
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/creebook.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/creebook.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleSyndicate
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/ebook.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/ebook.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: Biblegurugranthsahib
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/gurugranthsahib.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/gurugranthsahib.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleInsult
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/insult.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/insult.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleIthagua
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/ithagua.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/ithagua.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleKingYellow
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/kingyellow.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/kingyellow.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleKojiki
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/kojiki.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/kojiki.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleKoran
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/koran.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/koran.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleLight
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/light.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/light.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleMelted
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/melted.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/melted.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleScientology
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/scientology.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/scientology.rsi
+  - type: PointLight
+    radius: 2
+    color: "#00CCFF"
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleScrapbook
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/scrapbook.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/scrapbook.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleTome
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/tome.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/tome.rsi
+
+- type: entity
+  parent: Bible
+  name: necronomicon
+  description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
+  id: BibleWhite
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/bibles/white.rsi
+  - type: Item
+    sprite: Imperial/HolyGears/bibles/white.rsi
