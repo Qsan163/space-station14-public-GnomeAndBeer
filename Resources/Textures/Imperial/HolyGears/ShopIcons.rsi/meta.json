@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Скомпилировано из спрайтов брони . Archer - Сарра Хиллс , Witch - Оркес Ктулхид",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "archer"
+    },
+    {
+      "name": "witch"
+    },
+    {
+      "name": "ratvar"
+    },
+    {
+      "name": "leader"
+    },
+    {
+      "name": "acolyte"
+    },
+    {
+      "name": "profane"
+    },
+    {
+      "name": "stone"
+    },
+    {
+      "name": "chaplain"
+    },
+    {
+      "name": "follower"
+    }
+  ]
+}
