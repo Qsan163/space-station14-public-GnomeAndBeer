@@ -1,0 +1,93 @@
+- type: thiefBackpackSet
+  id: KitHolyArmorBase
+  name: Holy-crate-base-name
+  description: Holy-crate-base-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: base
+  content:
+  - ClothingHeadHolyHelmetBase
+  - ClothingOuterHolyArmorBase
+
+- type: thiefBackpackSet
+  id: KitHolyArmorArcher
+  name: Holy-crate-archer-name
+  description: Holy-crate-archer-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: archer
+  content:
+  - ClothingOuterHolyArmorArcher
+  - ClothingUniformHolyArcher
+  - ClothingShoesHolyArcher
+  - ClothingHandsHolyArcher
+
+- type: thiefBackpackSet
+  id: KitHolyArmorWitch
+  name: Holy-crate-witch-name
+  description: Holy-crate-witch-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: witch
+  content:
+  - ClothingHeadHolyHelmetWitch
+  - ClothingOuterHolyArmorWitch
+
+- type: thiefBackpackSet
+  id: KitHolyArmorRatvar
+  name: Holy-crate-ratvar-name
+  description: Holy-crate-ratvar-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: ratvar
+  content:
+  - ClothingHeadHolyHelmetRatvar
+  - ClothingOuterHolyArmorRatvar
+  - CrateMaterialBrass
+
+- type: thiefBackpackSet
+  id: KitHolyArmorLeader
+  name: Holy-crate-leader-name
+  description: Holy-crate-leader-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: leader
+  content:
+  - ClothingOuterHolyArmorLeader
+  - ClothingOuterHolyArmorFollower
+  - ClothingOuterHolyArmorFollower
+  - ClothingOuterHolyArmorFollower
+  - ClothingOuterHolyArmorFollower
+
+- type: thiefBackpackSet
+  id: KitHolyArmorAcolyte
+  name: Holy-crate-acolyte-name
+  description: Holy-crate-acolyte-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: acolyte
+  content:
+  - ClothingHeadHolyHelmetAcolyte
+  - ClothingOuterHolyArmorAcolyte
+
+- type: thiefBackpackSet
+  id: KitHolyArmorProfane
+  name: Holy-crate-profane-name
+  description: Holy-crate-profane-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: profane
+  content:
+  - ClothingHeadHolyHelmetProfane
+  - ClothingOuterHolyArmorProfane
+
+- type: thiefBackpackSet
+  id: KitHolyArmorStone
+  name: Holy-crate-stone-name
+  description: Holy-crate-stone-description
+  sprite:
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    state: stone
+  content:
+  - ClothingHeadHolyHelmetSentinel
+  - ClothingOuterHolyArmorSentinel

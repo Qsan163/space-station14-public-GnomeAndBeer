@@ -1,0 +1,18 @@
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: HolyWaterFlask
+  name: holy water flask
+  description: A bottle filled with nothing.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Holywater
+          Quantity: 100
+  - type: Sprite
+    sprite: Imperial/HolyGears/flask.rsi
+  - type: Sealable
+  - type: Item
+    sprite: Imperial/TFG/GoldenLife/presentableBox.rsi
+    size: Small

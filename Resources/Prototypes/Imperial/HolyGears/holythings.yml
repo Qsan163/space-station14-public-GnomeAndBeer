@@ -1,0 +1,293 @@
+- type: entity
+  name: pride hammer
+  parent: HolyWeaponBase
+  id: HolyWeaponPrideHammer
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: DisarmMalus
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/pride.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 16
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/pride.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/pride.rsi
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 2
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 2
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnCollide
+    transferAmount: 2
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: HolyMatter
+        Quantity: 0.5
+
+- type: reagent
+  id: HolyMatter
+  name: reagent-name-holy-matter
+  desc: reagent-desc-holy-matter
+  physicalDesc: reagent-physical-desc-glowing
+  flavor: holy
+  color: "#ffffff"
+  group: Unknown
+  metabolisms:
+    Food:
+      effects:
+      - !type:Luminescence
+        color: "#ffffff"
+        energyPerUnit: 2
+      - !type:Electrocute
+        probability: 0.2
+      - !type:HealthChange
+        damage:
+          groups:
+            Toxin: -5
+            Airloss: -5
+            Burn: -5
+            Brute: -5
+
+- type: entity
+  id: BulletHolySiver
+  name: silver bullet
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 18
+
+- type: entity
+  id: CartridgeCaselessHolySilver
+  name: silver bullet
+  parent: BaseCartridgeCaselessRifle
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Imperial/HolyGears/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: BulletHolySiver
+  - type: Tag
+    tags:
+      - HolySilverBullet
+
+#лук
+
+- type: entity
+  id: WeaponBowHoly
+  parent: BaseBow
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/bow.rsi
+    layers:
+    - state: unwielded
+      map: [ base ]
+    - state: unwielded-arrow
+      map: [ arrow ]
+      visible: false
+    - state: unwielded-plunger
+      map: [ plunger ]
+      visible: false
+  - type: Appearance
+  - type: ItemMapper
+    spriteLayers:
+    - arrow
+    - plunger
+    mapLayers:
+      arrow:
+        whitelist:
+          tags:
+          - Arrowholy
+      plunger:
+        whitelist:
+          tags:
+          - Plunger
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        arrow:
+          True: { state: wielded-arrow }
+          False: { state: unwielded-arrow }
+        plunger:
+          True: { state: wielded-plunger }
+          False: { state: unwielded-plunger }
+        base:
+          True: { state: wielded }
+          False: { state: unwielded }
+  - type: ItemSlots
+    slots:
+      projectiles:
+        name: Projectiles
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - Arrowholy
+          - Plunger
+        blacklist:
+          tags:
+            - Arrow
+
+- type: entity
+  parent: BaseArrow
+  id: ArrowHoly
+  name: glass shard arrow
+  description: The greyshirt's preferred projectile.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/arrows.rsi
+    layers:
+    - state: projectile
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+  - type: Tag
+    tags:
+      - Arrowholy
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltQuiverHoly
+  name: quiver
+  description: Can hold up to 15 arrows, and fits snug around your waist.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+      - id: ArrowHoly
+  - type: Sprite
+    sprite: Imperial/HolyGears/belt.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.StorageContainerVisualLayers.Fill" ]
+      visible: false
+  - type: Clothing
+  - type: Storage
+    grid:
+    - 0,0,7,3
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - Arrow
+      - Arrowholy
+  - type: Appearance
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/belt.rsi
+
+- type: entity
+  name: beaker box
+  parent: BoxCardboard
+  id: BoxHolyBow
+  description: A box full of beakers.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    maxItemSize: Normal
+  - type: StorageFill
+    contents:
+    - id: WeaponBowHoly
+      amount: 1
+    - id: ClothingBeltQuiverHoly
+      amount: 1
+  - type: Sprite
+    layers:
+      - state: box_command
+      - state: magazine
+
+- type: entity
+  parent: CommunityPosterBase
+  id: PosterPaintingGnomish
+  name: "pressf6151_1"
+  description: "pressf6151_1"
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/poster.rsi
+    state: poster
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackFilledChaplain
+  noSpawn: true
+  components:
+  - type: StorageFill
+    contents:
+      - id: BeaconChaplainArmor
+      - id: BoxSurvival
+      - id: Bible
+      - id: RubberStampChaplain
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelFilledChaplain
+  components:
+  - type: StorageFill
+    contents:
+      - id: BeaconChaplainArmor
+      - id: BoxSurvival
+      - id: Bible
+      - id: RubberStampChaplain
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelFilledChaplain
+  components:
+  - type: StorageFill
+    contents:
+      - id: BeaconChaplainArmor
+      - id: BoxSurvival
+      - id: Bible
+      - id: RubberStampChaplain
+
+- type: startingGear
+  id: ChaplainGearImperial
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChaplain
+    back: ClothingBackpackFilledChaplain
+    shoes: ClothingShoesColorBlack
+    id: ChaplainPDA
+    ears: ClothingHeadsetService
+  innerClothingSkirt: ClothingUniformJumpskirtChaplain
+  satchel: ClothingBackpackSatchelFilledChaplain
+  duffelbag: ClothingBackpackDuffelFilledChaplain

@@ -1,0 +1,1026 @@
+- type: entity
+  name: based holy item
+  parent: BaseItem
+  id: HolyWeaponBase
+  description: wery based .
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/base.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/base.rsi
+  - type: DisarmMalus
+  - type: CargoSellBlacklist
+
+- type: entity
+  name: Null Rod
+  parent: HolyWeaponBase
+  id: HolyWeaponNullrod
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/base.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 18
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10 
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/base.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/base.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: God's hand
+  parent: HolyWeaponBase
+  id: HolyWeaponHandGod
+  description: epic
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/godhand.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Heat: 18
+    soundHit:
+        path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/godhand.rsi
+  - type: DisarmMalus   
+  - type: Unremoveable
+
+- type: entity
+  name: Chainsaw hand
+  parent: HolyWeaponHandGod
+  id: HolyWeaponHandChainsaw
+  description: epic
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/chainsaw.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/chainsaw.ogg
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/chainsaw.rsi   
+  - type: Tool
+    qualities:
+      - Slicing
+    speed: 0.75
+  - type: Sharp
+
+- type: entity
+  name: Blue sacred staff
+  parent: HolyWeaponBase
+  id: HolyWeaponStaffBlue
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/blustaff.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+    sprite: Imperial/HolyGears/nullrod/blustaff.rsi
+  - type: DisarmMalus
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/blustaff.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/blustaff.rsi
+  - type: Damageable
+    damageContainer: Shield
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100 #This is probably enough damage before it breaks
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Effects/singularity_collapse.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              HolyWeaponStaffBlueOff:
+                min: 1
+                max: 1
+  - type: PointLight
+    radius: 2
+    color: "#00CCFF"
+
+- type: entity
+  name: Blue sacred staff
+  parent: HolyWeaponBase
+  id: HolyWeaponStaffBlueOff
+  description: nullrod .
+  suffix: OFF
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/bluoff.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+    sprite: Imperial/HolyGears/nullrod/bluoff.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/bluoff.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Item
+    size: Huge
+    sprite: Imperial/HolyGears/nullrod/bluoff.rsi
+  - type: TimedDespawn
+    lifetime: 180
+  - type: SpawnOnDespawn
+    prototype: HolyWeaponStaffBlue
+  - type: PointLight
+    radius: 2
+    color: "#00CCFF"
+
+- type: entity
+  name: Red sacred staff
+  parent: HolyWeaponStaffBlue
+  id: HolyWeaponStaffRed
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/redstaff.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/redstaff.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/redstaff.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100 #This is probably enough damage before it breaks
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Effects/singularity_collapse.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              HolyWeaponStaffredOff:
+                min: 1
+                max: 1
+  - type: PointLight
+    radius: 2
+    color: "#ff0033"
+
+- type: entity
+  name: Red sacred staff
+  parent: HolyWeaponBase
+  id: HolyWeaponStaffredOff
+  suffix: OFF
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/redoff.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+    sprite: Imperial/HolyGears/nullrod/redoff.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/redoff.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Item
+    size: Huge
+    sprite: Imperial/HolyGears/nullrod/redoff.rsi
+  - type: TimedDespawn
+    lifetime: 180
+  - type: SpawnOnDespawn
+    prototype: HolyWeaponStaffRed
+  - type: PointLight
+    radius: 2
+    color: "#ff0033"
+
+- type: entity
+  name: Holy claymore
+  parent: HolyWeaponBase
+  id: HolyWeaponSwordBase
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/claymore.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10
+  - type: Reflect
+    enabled: true
+    reflectProb: .30
+    spread: 90
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/claymore.rsi
+  - type: DisarmMalus
+  - type: Tool
+    qualities:
+      - Slicing
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/claymore.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - Back
+  - type: Sharp
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: Utensil
+    types:
+      - Knife
+
+- type: entity
+  name: Hanzo Steel katana
+  parent: HolyWeaponSwordBase
+  id: HolyWeaponSwordKatana
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/hanzo.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/hanzo.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - Belt
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/hanzo.rsi
+
+- type: entity
+  name: Dark blade
+  parent: HolyWeaponSwordBase
+  id: HolyWeaponSwordDarkmore
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/darkmore.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/darkmore.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - Belt
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/darkmore.rsi
+
+- type: entity
+  name: Force weapon
+  parent: HolyWeaponSwordBase
+  id: HolyWeaponSwordPower
+  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
+  noSpawn: false
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Machines/machine_switch.ogg
+    soundDeactivate:
+      path: /Audio/Machines/machine_switch.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+  - type: ItemToggleSharp
+  - type: ItemToggleHot
+  - type: ItemToggleDisarmMalus
+    activatedDisarmMalus: 0.6
+  - type: ItemToggleSize
+    activatedSize: Normal
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    activatedSoundOnHitNoDamage:
+      collection: sparks
+      params:
+        variation: 0.250
+        volume: 10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+        groups:
+            Brute: 18
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/power.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 4.5
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/power.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: "#47e8d7"
+    netsync: false
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/power.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - Belt
+
+- type: entity
+  name: red fake energy blade
+  parent: HolyWeaponBase
+  id: HolyWeaponEswordBase
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/eswordb.rsi
+    state: icon
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 2
+    color: "#ffffff"
+    netsync: false
+  - type: Reflect
+    enabled: true
+    reflectProb: .30
+    spread: 90
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Heat: 18
+    soundHit:
+        path: /Audio/Weapons/eblade1.ogg
+        params:
+          variation: 0.250
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Heat: 10 
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/eswordb.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/eswordb.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: red fake energy blade
+  parent: HolyWeaponEswordBase
+  id: HolyWeaponEswordPirate
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/eswordr.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/eswordr.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/eswordr.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: High frequency blade
+  parent: HolyWeaponBase
+  id: HolyWeaponHFBbase
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/highfr.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    ignoreResistances: true
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    sprite: Imperial/HolyGears/nullrod/highfr.rsi
+  - type: DisarmMalus
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10
+    ignoreResistances: true
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/highfr.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: EmbeddableProjectile
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/highfr.rsi
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+    speed: 1.5
+
+- type: entity
+  name: spellblade
+  parent: HolyWeaponHFBbase
+  id: HolyWeaponHFBSpellblade
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/spellblade.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/spellblade.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/spellblade.rsi
+
+- type: entity
+  name: haunted blade
+  parent: HolyWeaponHFBbase
+  id: HolyWeaponHFBTalking
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/haunted.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/haunted.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/haunted.rsi
+  - type: GhostRole #Ghost role
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: false
+    requirements:
+    name: sword-role-name
+    description: sword-role-desc
+  - type: RadiationSource
+    intensity: 0.3
+  - type: TypingIndicator
+    proto: alien
+  - type: GhostTakeoverAvailable   #Ghost role
+  - type: GhostHearing #я не уверен насколько это будет баллансно , ОЧЕНЬ НЕ УВЕРЕН . Сбаллансировал радиацией . 
+
+- type: entity
+  name: kool sord
+  parent: HolyWeaponBase
+  id: HolyWeaponSord
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/kool.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 4.13 #так надо
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 2.13 
+  - type: EmbeddableProjectile
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/kool.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/kool.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: relict warhammer
+  parent: HolyWeaponBase
+  id: HolyWeaponHammer
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/hammer.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10 
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/hammer.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/hammer.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: Unholy blessing
+  parent: HolyWeaponBase
+  id: HolyWeaponHandUnholy
+  description: epic
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/unholy.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/unholy.rsi
+  - type: DisarmMalus   
+  - type: Unremoveable
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+    speed: 0.75
+
+- type: entity
+  name: Dark blessing
+  parent: HolyWeaponHandUnholy
+  id: HolyWeaponHandDark
+  description: epic
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/dark.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/dark.rsi
+
+- type: entity
+  name: holy fukken honk dagger
+  parent: HolyWeaponNullrod
+  id: HolyWeaponSmallHonki
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/honk.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        collection: BikeHorn
+  - type: EmbeddableProjectile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10 
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/nullrod/honk.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/honk.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+
+- type: entity
+  name: hypertool
+  parent: HolyWeaponNullrod
+  id: HolyWeaponSmallHyper
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/hyper.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Bloodloss: 18
+    soundHit:
+        collection: sparks
+        params:
+          variation: 0.250
+          volume: 50
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 0
+  - type: Item
+    size: Small
+    sprite: Objects/Tools/multitool.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/hyper.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: atheist's fedora
+  parent: HolyWeaponBase
+  id: HolyWeaponFedora
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 0
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: EmbeddableProjectile
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 30
+  - type: Item
+    size: Small
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  name: holy whip
+  parent: HolyWeaponBase
+  id: HolyWeaponWhip
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/plett.rsi
+    state: icon
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/plett.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/grille_hit.ogg
+  - type: Item
+    size: Normal
+    sprite: Imperial/HolyGears/nullrod/plett.rsi
+
+- type: entity
+  name: Hellish pitchford
+  parent: HolyWeaponBase
+  id: HolyWeaponStaffFork
+  description: A robust baseball bat.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/fork.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 7.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 7.5
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10
+  - type: EmbeddableProjectile
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/fork.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/fork.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: UseDelay
+    delay: 1
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+
+- type: entity
+  name: Carp'sie plush
+  parent: HolyWeaponBase
+  id: HolyWeaponPlushCarp
+  description: A robust baseball bat.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/carp.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 15
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10
+  - type: EmbeddableProjectile
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/toys.rsi
+    heldPrefix: carpplush
+    storedRotation: -90
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/bite.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/bite.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/bite.ogg
+  - type: UseDelay
+    delay: 1
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+
+- type: entity
+  name: Null Rod
+  parent: HolyWeaponBase
+  id: HolyWeaponRatvarSpear
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/ratvar.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      groups:
+        Brute: 18
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 10 
+  - type: EmbeddableProjectile
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/ratvar.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/ratvar.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: Null Rod
+  parent: HolyWeaponBase
+  id: HolyWeaponPharaoh
+  description: nullrod .
+  noSpawn: false
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/pharaoh.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 18
+    soundHit:
+        path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10 
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/pharaoh.rsi
+  - type: DisarmMalus
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/pharaoh.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: BaseWeaponRifle
+  parent: BaseItem
+  id: WeaponHolyMusket
+  description: A rooty tooty point and shooty.
+  components:
+  - type: CargoSellBlacklist
+  - type: Sprite
+    sprite: Imperial/HolyGears/nullrod/phantom.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Ginormous
+    sprite: Imperial/HolyGears/nullrod/phantomhand.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/nullrod/phantomhand.rsi
+    quickEquip: false
+    slots:
+      - back
+      - suitStorage
+  - type: AmmoCounter
+  - type: Appearance
+  - type: MultiHandedItem
+  - type: Gun
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletHolySiver
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.25
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
+      params:
+        volume: 0.2
+  - type: StaticPrice
+    price: 500
+
+- type: Tag
+  id: HolySilverBullet
+
+- type: Tag
+  id: Arrowholy

@@ -1,0 +1,398 @@
+#Броня крестоносца
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHolyHelmetBase
+  name: crusader helmet
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/basehelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/basehelmet.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterHolyArmorBase
+  name: crusader armor
+  description: A standard Type I armored vest that provides decent protection against most types of damage.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/base.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/base.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70 
+        Heat: 0.80
+        Stamina: 0.80 
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#набор лучника
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetArcher
+  name: Divine archer hood
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/archerhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/archerhelmet.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorArcher
+  name: Divine archer armor
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/archer.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/archer.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70 
+        Heat: 0.80
+        Stamina: 0.80 
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHolyHelmetArcher
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHolyArcher
+  name: Divine archer uniform
+  description: A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/archeruniform.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/archeruniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHolyArcher
+  name: Divine archer boots
+  description: Stylish black shoes.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/archerboots.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/archerboots.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsHolyArcher
+  name: Divine archer bracelets
+  description: Plain black gloves without fingertips for the hard working.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/archergloves.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/archergloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-holy #сделал особый тип волокон чтобы небыло имбой по сравнению с другими сетами
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#броня охотника на ведьм
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetWitch
+  name: Witch hunter hat
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/witchhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/witchhelmet.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorWitch
+  name: Witch hunter robe
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/witch.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/witch.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#ратварианская броня
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetRatvar
+  name: ratvarian helmet
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/ratvarhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/ratvarhelmet.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorRatvar
+  name: ratvarian quirass
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/ratvar.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/ratvar.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#Набор "последователи священника"
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetLeader
+  name: Cult leader hood
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/leaderhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/leaderhelmet.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorLeader
+  name: Cult leader armor
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/leader.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/leader.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70 
+        Heat: 0.80
+        Stamina: 0.80 
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHolyHelmetLeader
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHolyHelmetFollower
+  name: Cult follower hood
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/followerhelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/followerhelmet.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterHolyArmorFollower
+  name: Cult follower armor
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/follower.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/follower.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHolyHelmetFollower
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#броня аколита
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetAcolyte
+  name: Acolyte hood
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/acolytehelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/acolytehelmet.rsi
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorAcolyte
+  name: Acolyte armor
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/acolyte.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/acolyte.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#сет ученика
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetProfane
+  name: profane scholar cage
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/profanehelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/profanehelmet.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorProfane
+  name: profane scholar coat
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/profane.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/profane.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+#набор Каменный страж
+
+- type: entity
+  parent: ClothingHeadHolyHelmetBase
+  id: ClothingHeadHolyHelmetSentinel
+  name: Ancient knight helmet
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/stonehelmet.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/stonehelmet.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingOuterHolyArmorBase
+  id: ClothingOuterHolyArmorSentinel
+  name: Ancient knight armor
+  description: tut mogla bit vasha reklama
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/armor/stone.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/armor/stone.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

@@ -1,0 +1,194 @@
+- type: entity
+  id: ImperialChaplainBook
+  parent: BaseItem
+  name: how to rock and stone
+  description: A very detailed guide about salvage written by Karl, a legendary space miner, however he's missing. It motivates you to rock and stone.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/guidebook.rsi
+    layers:
+    - state: icon
+  - type: Tag
+    tags:
+    - Book
+  - type: GuideHelp
+    openOnActivation: true
+    guides:
+    - ImperialChaplain
+
+#сам гайд
+- type: guideEntry
+  id: ImperialChaplain
+  name: imperial-guide-entry-chaplain
+  text: "/ServerInfo/Imperial/HolyGears/chaplain.xml"
+  children:
+  - ImperialChaplainProfession
+  - ImperialChaplainRP
+
+#категория профессии
+- type: guideEntry
+  id: ImperialChaplainProfession
+  name: imperial-guide-entry-chaplain-prof
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-prof.xml"
+  children:
+  - ImperialChaplainProfessionSRP
+  - ImperialChaplainProfessionNullrod
+  - ImperialChaplainProfessionArmor
+  - ImperialChaplainProfessionHolywater
+
+- type: guideEntry
+  id: ImperialChaplainProfessionSRP
+  name: imperial-guide-entry-chaplain-prof-SRP
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-prof-SRP.xml"
+
+- type: guideEntry
+  id: ImperialChaplainProfessionHolywater
+  name: imperial-guide-entry-chaplain-prof-Holywater
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-prof-Holywater.xml"
+
+- type: guideEntry
+  id: ImperialChaplainProfessionNullrod
+  name: imperial-guide-entry-chaplain-prof-nullrod
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-prof-nullrod.xml"
+
+- type: guideEntry
+  id: ImperialChaplainProfessionArmor
+  name: imperial-guide-entry-chaplain-prof-armor
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-prof-Armor.xml"
+
+#РП-категория
+- type: guideEntry
+  id: ImperialChaplainRP
+  name: imperial-guide-entry-chaplain-RP
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-RP.xml"
+  children:
+  - ImperialChaplainRPReligions
+  - ImperialChaplainRPBooks
+  - ImperialChaplainRPMolitwi
+
+- type: guideEntry
+  id: ImperialChaplainRPReligions
+  name: imperial-guide-entry-chaplain-RP-religions
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-RP-religions.xml"
+
+- type: guideEntry
+  id: ImperialChaplainRPBooks
+  name: imperial-guide-entry-chaplain-RP-book
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-RP-bibles.xml"
+
+- type: guideEntry
+  id: ImperialChaplainRPMolitwi
+  name: imperial-guide-entry-chaplain-RP-prayer
+  text: "/ServerInfo/Imperial/HolyGears/chaplain-RP-prayer.xml"
+
+#обьекты для entry
+
+- type: entity
+  id: ImperialTutorialObjectChaplain
+  name: Chaplain
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: chaplain
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorBase
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: base
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorarcher
+  name: . . .
+  description: Sarra Hills.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: archer
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorwitch
+  name: . . .
+  description: Orces Ctulhid.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: witch
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorratvar
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: ratvar
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorsectleader
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: leader
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorsectfollower
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: follower
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmoradept
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: acolyte
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorprofane
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: profane
+
+- type: entity
+  id: ImperialTutorialObjectChaplainArmorstone
+  name: . . .
+  description: Ivo Robotnik.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/Imperial/HolyGears/ShopIcons.rsi
+    layers:
+    - state: stone

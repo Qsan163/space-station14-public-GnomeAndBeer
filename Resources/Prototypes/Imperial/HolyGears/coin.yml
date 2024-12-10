@@ -1,0 +1,12 @@
+- type: entity
+  name: HolyCoin
+  parent: BaseItem
+  id: HolyCoinRod
+  description: hamster coin
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/coin.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Imperial/HolyGears/coin.rsi

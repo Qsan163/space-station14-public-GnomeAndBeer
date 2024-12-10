@@ -1,0 +1,89 @@
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorSlimHolyERT
+  name: armor vest
+  suffix: slim
+  description: A slim Type I armored vest that provides decent protection against most types of damage.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/ertgear/ertrobe.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/ertgear/ertrobe.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetERTHoly
+  name: ERT leader helmet
+  description: An in-atmosphere helmet worn by the leader of a Nanotrasen Emergency Response Team. Has blue highlights.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/ertgear/erthat.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/ertgear/erthat.rsi
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndieCommander
+  id: ClothingOuterHardsuitERTHoly
+  name: ERT leader's hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/ertgear/ertsuit.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/ertgear/ertsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitERTHolyHelmet
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndieCommander
+  id: ClothingOuterHardsuitERTHolyHelmet
+  name: ERT leader hardsuit helmet
+  description: A special hardsuit helmet worn by members of an emergency response team.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Imperial/HolyGears/ertgear/erthelm.rsi
+  - type: Clothing
+    sprite: Imperial/HolyGears/ertgear/erthelm.rsi
+  - type: PointLight
+    color: "#addbff"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  name: reinforced spear
+  parent: Spear
+  id: SpearMilitaryHoly
+  description: A spear with a reinforced glass shard as a tip.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/holyspear.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 20
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 18
+  - type: Clothing
+    sprite: Imperial/HolyGears/holyspear.rsi
+    quickEquip: false
+    slots:
+      - back
+      - suitStorage
+
+- type: entity
+  id: ClothingNeckCloakTsarGreen
+  parent: ClothingNeckBase
+  name: Green royal cloak
+  description: Stylish black cloak with Nanotrasen symbols.
+  components:
+  - type: Sprite
+    sprite: Imperial/HolyGears/ertgear/ertcloak.rsi
