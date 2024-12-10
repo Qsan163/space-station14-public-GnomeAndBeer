@@ -1,0 +1,46 @@
+<Document>
+# Cвященные книги
+
+Библия (или любая другая священная книга) - один из главных атрибутов священника , с помощью нее священник может призвать  фамильяра , так-же с помощью нее священник может лечить травмы , нажав библией по больному человеку. Характеристики всех священных книг одинаковы .
+<Box>
+<GuideEntityEmbed Entity="Bible" />
+<GuideEntityEmbed Entity="BibleTome" />
+<GuideEntityEmbed Entity="BibleLight" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleClown" />
+<GuideEntityEmbed Entity="BibleNecronomiconHoly" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleKoran" />
+<GuideEntityEmbed Entity="BibleIthagua" />
+<GuideEntityEmbed Entity="BibleSyndicate" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleKojiki" />
+<GuideEntityEmbed Entity="BibleWhite" />
+<GuideEntityEmbed Entity="Biblegurugranthsahib" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleBanana" />
+<GuideEntityEmbed Entity="BibleMormon" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleKingYellow" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleMelted" />
+<GuideEntityEmbed Entity="Bibleburning" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleScientology" />
+<GuideEntityEmbed Entity="BibleScrapbook" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleInsult" />
+<GuideEntityEmbed Entity="BibleAtheist" />
+</Box>
+<Box>
+<GuideEntityEmbed Entity="BibleCreeper" />
+</Box>
+</Document>
